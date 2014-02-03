@@ -1,0 +1,155 @@
+#:kivy 1.0
+
+<PhoneScreen>:
+    FloatLayout:
+        orientation: "vertical"
+        TextInput:
+            id: "phone"
+            size_hint: .5, .1
+            font_size: 40
+            multiline: False
+            pos_hint: {'center_x':.5, 'center_y':.7}
+            hint_text: " Your Phone Number"
+        Button:
+            pos_hint:{'center_x':.5, 'center_y':.5}
+            font_size: 30
+            size_hint: .3, .1
+            text: "Send"
+            on_press: root.manager.current = "confirm"
+
+<ConfirmScreen>:
+    FloatLayout:
+        TextInput:
+            id: "confirm"
+            size_hint: .5, .1
+            font_size: 40
+            multiline: False
+            pos_hint: {'center_x':.5, 'center_y':.7}
+            hint_text: "       Validate Code"
+        Button:
+            pos_hint:{'center_x':.5, 'center_y':.5}
+            font_size: 30
+            size_hint: .3, .1
+            text: "Confirm"
+            on_press: root.manager.current = "menu"
+        Button:
+            pos_hint:{'center_x':.5, 'center_y':.4}
+            font_size: 30
+            size_hint: .3, .1
+            text: "Back"
+            on_press: root.manager.current = "phone"
+<MenuScreen>:
+    FloatLayout:
+        TextInput:
+            id: event
+            size_hint: .5, .1
+            font_size: 40
+            multiline: False
+            pos_hint: {'center_x':.5, 'center_y':.9}
+            hint_text: "               Event"
+        TextInput:
+            id: "sdate"
+            size_hint: .5, .1
+            font_size: 40
+            multiline: False
+            pos_hint: {'center_x':.5, 'center_y':.8}
+            hint_text: "           Start Date"
+        TextInput:
+            id: "stime"
+            size_hint: .5, .1
+            font_size: 40
+            multiline: False
+            pos_hint: {'center_x':.5, 'center_y':.7}
+            hint_text: "           Start Time"
+        TextInput:
+            id: "location"
+            size_hint: .5, .1
+            font_size: 40
+            multiline: False
+            pos_hint: {'center_x':.5, 'center_y':.6}
+            hint_text: "            Location"
+        TextInput:
+            id: "others"
+            size_hint: .5, .1
+            font_size: 40
+            multiline: False
+            pos_hint: {'center_x':.5, 'center_y':.5}
+            hint_text: "             Others"
+        Label:
+            size_hint: .5, .1
+            font_size: 40
+            multiline: False
+            pos_hint: {'center_x':.5, 'center_y':.4}
+            text: "Message:On | Voice:Off      "
+        Switch:
+            size_hint: None, None
+            pos_hint: {'center_x':.5, 'center_y':.3}
+            active: True
+        Button:
+            pos_hint:{'center_x':.5, 'center_y':.2}
+            font_size: 30
+            size_hint: .3, .1
+            text: "Next"
+            on_press: root.manager.current = "result"
+        Button:
+            pos_hint:{'center_x':.5, 'center_y':.1}
+            font_size: 30
+            size_hint: .3, .1
+            text: "Change Phone"
+            on_press: root.manager.current = "phone"
+<ResultScreen>:
+    FloatLayout:
+        Label:
+            id: event
+            size_hint: .5, .1
+            font_size: 40
+            multiline: False
+            pos_hint: {'center_x':.5, 'center_y':.9}
+            text: "Event"
+        Label:
+            size_hint: .5, .1
+            font_size: 40
+            multiline: False
+            pos_hint: {'center_x':.5, 'center_y':.8}
+            text: "Start Date"
+        Label:
+            size_hint: .5, .1
+            font_size: 40
+            multiline: False
+            pos_hint: {'center_x':.5, 'center_y':.7}
+            text: "Start Time"
+        Label:
+            size_hint: .5, .1
+            font_size: 40
+            multiline: False
+            pos_hint: {'center_x':.5, 'center_y':.6}
+            text: "Location"
+        Label:
+            size_hint: .5, .1
+            font_size: 40
+            multiline: False
+            pos_hint: {'center_x':.5, 'center_y':.5}
+            text: "Others"
+        Label:
+            pos_hint:{'center_x':.5, 'center_y':.4}
+            font_size: 40
+            size_hint: .2, .1
+            color: 1,0,0,1
+            text: "Data Send Success"
+        Button:
+            pos_hint:{'center_x':.5, 'center_y':.2}
+            font_size: 30
+            size_hint: .3, .1
+            text: "Demo Page"
+            on_press: root.manager.current = "emergency"
+<EmergencyScreen>: 
+    BoxLayout:
+        orientation: "vertical"
+        padding: 50
+        Button:
+            color: 1,0,0,1
+            font_size: 100
+            text: "Emergency"
+            on_press: root.emergency()
+               
+
