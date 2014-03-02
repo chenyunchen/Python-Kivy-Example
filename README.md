@@ -24,8 +24,8 @@ class ChangeApp(App):
 ```
 
 The kv file name must have relation with this class.
-class ChangeAPP → change.kv
-      AbcAPP    → abc.kv
+class ChangeAPP → change.kv;
+classAbcAPP    → abc.kv
    
 You can also write screen manage in .kv file
 import the screen manager module first!
